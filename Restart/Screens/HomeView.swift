@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
+//    MARK: Properties
+    @AppStorage("onboarding") var isOnboardingActive: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20, content: {
+            Text("Home")
+                .font(.largeTitle)
+            
+            Button {
+                isOnboardingActive = true
+            } label: {
+                Text("Restart")
+            }
+
+        })
     }
 }
 
